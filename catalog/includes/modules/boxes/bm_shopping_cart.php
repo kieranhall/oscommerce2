@@ -74,11 +74,11 @@
                                  '<tr><td colspan="2" align="right">' . $currencies->format($cart->show_total()) . '</td></tr>' .
                                  '</table>';
       } else {
-        $cart_contents_string .= '<div class="ui-widget-content infoBoxContents">' . MODULE_BOXES_SHOPPING_CART_BOX_CART_EMPTY . '</div>';
+        $cart_contents_string .= MODULE_BOXES_SHOPPING_CART_BOX_CART_EMPTY;
       }
 
-      $data = '<div class="ui-widget infoBoxContainer">' .
-              '  <div class="ui-widget-header infoBoxHeading"><a href="' . tep_href_link(FILENAME_SHOPPING_CART) . '">' . MODULE_BOXES_SHOPPING_CART_BOX_TITLE . '</a></div>' .
+      $data = '<div class="well nav-sidebox">' .
+              '  <h4><a href="' . tep_href_link(FILENAME_SHOPPING_CART) . '">' . MODULE_BOXES_SHOPPING_CART_BOX_TITLE . '</a></h4>' .
               '  ' . $cart_contents_string .
               '</div>';
 

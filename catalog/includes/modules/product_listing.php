@@ -13,8 +13,6 @@
   $listing_split = new splitPageResults($listing_sql, MAX_DISPLAY_SEARCH_RESULTS, 'p.products_id');
 ?>
 
-  <div class="contentText">
-
 <?php
   if ( ($listing_split->number_of_rows > 0) && ( (PREV_NEXT_BAR_LOCATION == '1') || (PREV_NEXT_BAR_LOCATION == '3') ) ) {
 ?>
@@ -30,8 +28,7 @@
 <?php
   }
 
-  $prod_list_contents = '<div class="ui-widget infoBoxContainer">' .
-                        '  <div class="ui-widget-header ui-corner-top infoBoxHeading">' .
+  $prod_list_contents = '<div class="well nav-sidebox">' .
                         '    <table border="0" width="100%" cellspacing="0" cellpadding="2" class="productListingHeader">' .
                         '      <tr>';
 
@@ -88,8 +85,7 @@
     $rows = 0;
     $listing_query = tep_db_query($listing_split->sql_query);
 
-    $prod_list_contents .= '  <div class="ui-widget-content ui-corner-bottom productListTable">' .
-                           '    <table border="0" width="100%" cellspacing="0" cellpadding="2" class="productListingData">';
+    $prod_list_contents .= '    <table class="table table-striped">';
 
     while ($listing = tep_db_fetch_array($listing_query)) {
       $rows++;
@@ -140,9 +136,7 @@
       $prod_list_contents .= '      </tr>';
     }
 
-    $prod_list_contents .= '    </table>' .
-                           '  </div>' .
-                           '</div>';
+    $prod_list_contents .= '    </table>';
 
     echo $prod_list_contents;
   } else {
@@ -167,5 +161,3 @@
 <?php
   }
 ?>
-
-  </div>

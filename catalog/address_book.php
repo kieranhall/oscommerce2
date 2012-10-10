@@ -37,12 +37,9 @@
   <h2><?php echo PRIMARY_ADDRESS_TITLE; ?></h2>
 
   <div class="contentText">
-    <div class="ui-widget infoBoxContainer" style="float: right;">
-      <div class="ui-widget-header infoBoxHeading"><?php echo PRIMARY_ADDRESS_TITLE; ?></div>
-
-      <div class="ui-widget-content infoBoxContents">
+    <div class="well nav-sidebox" style="float: right;">
+      <h4><?php echo PRIMARY_ADDRESS_TITLE; ?></h4>
         <?php echo tep_address_label($customer_id, $customer_default_address_id, true, ' ', '<br />'); ?>
-      </div>
     </div>
 
     <?php echo PRIMARY_ADDRESS_DESCRIPTION; ?>

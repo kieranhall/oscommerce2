@@ -39,12 +39,16 @@
     $category = tep_db_fetch_array($category_query);
 ?>
 
-<h1><?php echo $category['categories_name']; ?></h1>
-
-<div class="contentContainer">
-  <div class="contentText">
-    <table border="0" width="100%" cellspacing="0" cellpadding="2">
-      <tr>
+<div class="row-fluid">
+  <?php if ($oscTemplate->hasBlocks('boxes_column_left')): ?>
+    <div class="span2">
+      <?php echo $oscTemplate->getBlocks('boxes_column_left'); ?>
+    </div>
+  <?php endif;?>
+    <div class="span8">
+      <h1><?php echo $category['categories_name']; ?></h1>
+      <table class="table">
+        <tr>
 <?php
     if (isset($cPath) && strpos('_', $cPath)) {
 // check to see if there are deeper categories within the current category
@@ -70,7 +74,7 @@
       $rows++;
       $cPath_new = tep_get_path($categories['categories_id']);
       $width = (int)(100 / MAX_DISPLAY_CATEGORIES_PER_ROW) . '%';
-      echo '        <td align="center" class="smallText" width="' . $width . '" valign="top"><a href="' . tep_href_link(FILENAME_DEFAULT, $cPath_new) . '">' . tep_image(DIR_WS_IMAGES . $categories['categories_image'], $categories['categories_name'], SUBCATEGORY_IMAGE_WIDTH, SUBCATEGORY_IMAGE_HEIGHT) . '<br />' . $categories['categories_name'] . '</a></td>' . "\n";
+      echo '        <td><a href="' . tep_href_link(FILENAME_DEFAULT, $cPath_new) . '">' . tep_image(DIR_WS_IMAGES . $categories['categories_image'], $categories['categories_name'], SUBCATEGORY_IMAGE_WIDTH, SUBCATEGORY_IMAGE_HEIGHT) . '<br />' . $categories['categories_name'] . '</a></td>' . "\n";
       if ((($rows / MAX_DISPLAY_CATEGORIES_PER_ROW) == floor($rows / MAX_DISPLAY_CATEGORIES_PER_ROW)) && ($rows != $number_of_categories)) {
         echo '      </tr>' . "\n";
         echo '      <tr>' . "\n";
@@ -82,12 +86,16 @@
 ?>
       </tr>
     </table>
-
     <br />
 
 <?php include(DIR_WS_MODULES . FILENAME_NEW_PRODUCTS); ?>
 
   </div>
+  <?php if ($oscTemplate->hasBlocks('boxes_column_right')): ?>
+    <div class="span2">
+      <?php echo $oscTemplate->getBlocks('boxes_column_right'); ?>
+    </div>
+  <?php endif; ?>
 </div>
 
 <?php
@@ -204,10 +212,14 @@
     }
 ?>
 
-<h1><?php echo $catname; ?></h1>
-
-<div class="contentContainer">
-
+<div class="row-fluid">
+  <?php if ($oscTemplate->hasBlocks('boxes_column_left')): ?>
+    <div class="span2">
+      <?php echo $oscTemplate->getBlocks('boxes_column_left'); ?>
+    </div>
+  <?php endif;?>
+  <div class="span8">
+    <h1><?php echo $catname; ?></h1>
 <?php
 // optional Product List Filter
     if (PRODUCT_LIST_FILTER > 0) {
@@ -218,7 +230,7 @@
       }
       $filterlist_query = tep_db_query($filterlist_sql);
       if (tep_db_num_rows($filterlist_query) > 1) {
-        echo '<div>' . tep_draw_form('filter', FILENAME_DEFAULT, 'get') . '<p align="right">' . TEXT_SHOW . '&nbsp;';
+        echo tep_draw_form('filter', FILENAME_DEFAULT, 'get') . '<p align="right">' . TEXT_SHOW . '&nbsp;';
         if (isset($HTTP_GET_VARS['manufacturers_id']) && !empty($HTTP_GET_VARS['manufacturers_id'])) {
           echo tep_draw_hidden_field('manufacturers_id', $HTTP_GET_VARS['manufacturers_id']);
           $options = array(array('id' => '', 'text' => TEXT_ALL_CATEGORIES));
@@ -231,41 +243,49 @@
           $options[] = array('id' => $filterlist['id'], 'text' => $filterlist['name']);
         }
         echo tep_draw_pull_down_menu('filter_id', $options, (isset($HTTP_GET_VARS['filter_id']) ? $HTTP_GET_VARS['filter_id'] : ''), 'onchange="this.form.submit()"');
-        echo tep_hide_session_id() . '</p></form></div>' . "\n";
+        echo tep_hide_session_id() . '</p></form>' . "\n";
       }
     }
 
     include(DIR_WS_MODULES . FILENAME_PRODUCT_LISTING);
 ?>
-
+  </div>
+  <?php if ($oscTemplate->hasBlocks('boxes_column_right')): ?>
+    <div class="span2">
+      <?php echo $oscTemplate->getBlocks('boxes_column_right'); ?>
+    </div>
+  <?php endif; ?>
 </div>
 
 <?php
   } else { // default page
 ?>
 
-<h1><?php echo HEADING_TITLE; ?></h1>
-
-<div class="contentContainer">
-  <div class="contentText">
-    <?php echo tep_customer_greeting(); ?>
-  </div>
-
-<?php
-    if (tep_not_null(TEXT_MAIN)) {
-?>
-
-  <div class="contentText">
+<div class="row-fluid">
+  <?php if ($oscTemplate->hasBlocks('boxes_column_left')): ?>
+    <div class="span2">
+      <?php echo $oscTemplate->getBlocks('boxes_column_left'); ?>
+    </div>
+  <?php endif;?>
+  <div class="span8">
+    <div class="hero-unit">
+      <h1><?php echo HEADING_TITLE; ?></h1>
+      <p><?php echo tep_customer_greeting(); ?></p>
+    </div>
+<?php if (tep_not_null(TEXT_MAIN)): ?>
     <?php echo TEXT_MAIN; ?>
-  </div>
+<?php endif; ?>
 
 <?php
-    }
-
     include(DIR_WS_MODULES . FILENAME_NEW_PRODUCTS);
     include(DIR_WS_MODULES . FILENAME_UPCOMING_PRODUCTS);
 ?>
-
+  </div>
+  <?php if ($oscTemplate->hasBlocks('boxes_column_right')): ?>
+    <div class="span2">
+      <?php echo $oscTemplate->getBlocks('boxes_column_right'); ?>
+    </div>
+  <?php endif; ?>
 </div>
 
 <?php

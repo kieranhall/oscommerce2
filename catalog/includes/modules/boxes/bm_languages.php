@@ -46,9 +46,9 @@
             $languages_string .= ' <a href="' . tep_href_link(basename($PHP_SELF), tep_get_all_get_params(array('language', 'currency')) . 'language=' . $key, $request_type) . '">' . tep_image(DIR_WS_LANGUAGES .  $value['directory'] . '/images/' . $value['image'], $value['name']) . '</a> ';
           }
 
-          $data = '<div class="ui-widget infoBoxContainer">' .
-                  '  <div class="ui-widget-header infoBoxHeading">' . MODULE_BOXES_LANGUAGES_BOX_TITLE . '</div>' .
-                  '  <div class="ui-widget-content infoBoxContents" style="text-align: center;">' . $languages_string . '</div>' .
+          $data = '<div class="well nav-sidebox">' .
+                  '  <h4>' . MODULE_BOXES_LANGUAGES_BOX_TITLE . '</h4>' .
+                  $languages_string .
                   '</div>';
 
           $oscTemplate->addBlock($data, $this->group);

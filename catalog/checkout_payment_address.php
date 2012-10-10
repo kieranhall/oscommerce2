@@ -263,19 +263,12 @@ function check_form_optional(form_name) {
 
   <h2><?php echo TABLE_HEADING_PAYMENT_ADDRESS; ?></h2>
 
-  <div class="contentText">
-    <div class="ui-widget infoBoxContainer" style="float: right;">
-      <div class="ui-widget-header infoBoxHeading"><?php echo TITLE_PAYMENT_ADDRESS; ?></div>
-
-      <div class="ui-widget-content infoBoxContents">
+    <div class="well nav-sidebox pull-right">
+      <h4><?php echo TITLE_PAYMENT_ADDRESS; ?></h4>
         <?php echo tep_address_label($customer_id, $billto, true, ' ', '<br />'); ?>
-      </div>
     </div>
 
     <?php echo TEXT_SELECTED_PAYMENT_DESTINATION; ?>
-  </div>
-
-  <div style="clear: both;"></div>
 
 <?php
     if ($addresses_count > 1) {

@@ -14,10 +14,9 @@
   if (tep_db_num_rows($expected_query) > 0) {
 ?>
 
-  <div class="ui-widget infoBoxContainer">
-    <div class="ui-widget-header ui-corner-top infoBoxHeading">
-      <span><?php echo TABLE_HEADING_UPCOMING_PRODUCTS; ?></span>
-      <span style="float: right;"><?php echo TABLE_HEADING_DATE_EXPECTED; ?></span>
+  <div class="well nav-sidebox">
+      <h5 class="pull-left"><?php echo TABLE_HEADING_UPCOMING_PRODUCTS; ?></h5>
+      <h5 class="pull-right"><?php echo TABLE_HEADING_DATE_EXPECTED; ?></h5>
     </div>
 
     <div class="ui-widget-content ui-corner-bottom">

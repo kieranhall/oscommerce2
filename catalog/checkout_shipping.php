@@ -200,12 +200,9 @@ function rowOutEffect(object) {
   <h2><?php echo TABLE_HEADING_SHIPPING_ADDRESS; ?></h2>
 
   <div class="contentText">
-    <div class="ui-widget infoBoxContainer" style="float: right;">
-      <div class="ui-widget-header infoBoxHeading"><?php echo TITLE_SHIPPING_ADDRESS; ?></div>
-
-      <div class="ui-widget-content infoBoxContents">
-        <?php echo tep_address_label($customer_id, $sendto, true, ' ', '<br />'); ?>
-      </div>
+    <div class="well nav-sidebox pull-right">
+      <h4><?php echo TITLE_SHIPPING_ADDRESS; ?></h4>
+      <?php echo tep_address_label($customer_id, $sendto, true, ' ', '<br />'); ?>
     </div>
 
     <?php echo TEXT_CHOOSE_SHIPPING_DESTINATION; ?><br /><br /><?php echo tep_draw_button(IMAGE_BUTTON_CHANGE_ADDRESS, 'home', tep_href_link(FILENAME_CHECKOUT_SHIPPING_ADDRESS, '', 'SSL')); ?>

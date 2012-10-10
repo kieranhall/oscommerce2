@@ -23,12 +23,9 @@
 
 <div class="contentContainer">
   <div class="contentText">
-    <div class="ui-widget infoBoxContainer" style=" width: 40%; float: right; padding: 0 0 10px 10px;">
-      <div class="ui-widget-header infoBoxHeading"><?php echo BOX_INFORMATION_HEADING; ?></div>
-
-      <div class="ui-widget-content infoBoxContents">
-        <?php echo BOX_INFORMATION; ?>
-      </div>
+    <div class="well nav-sidebox" style=" width: 40%; float: right; padding: 0 0 10px 10px;">
+      <h4><?php echo BOX_INFORMATION_HEADING; ?></h4>
+      <?php echo BOX_INFORMATION; ?>
     </div>
 
     <?php echo TEXT_INFORMATION; ?>

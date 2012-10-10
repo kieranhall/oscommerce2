@@ -26,7 +26,7 @@
     }
 
     function trail($separator = ' - ') {
-      $trail_string = '';
+      $trail_string = '<li>';
 
       for ($i=0, $n=sizeof($this->_trail); $i<$n; $i++) {
         if (isset($this->_trail[$i]['link']) && tep_not_null($this->_trail[$i]['link'])) {
@@ -35,8 +35,10 @@
           $trail_string .= $this->_trail[$i]['title'];
         }
 
-        if (($i+1) < $n) $trail_string .= $separator;
+        if (($i+1) < $n) $trail_string .= '<span class="divider">' . $separator . '</span>';
       }
+      
+      $trail_string .= '</li>';
 
       return $trail_string;
     }

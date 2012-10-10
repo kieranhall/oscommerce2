@@ -20,7 +20,7 @@
     error_log(strftime(STORE_PARSE_DATE_TIME_FORMAT) . ' - ' . getenv('REQUEST_URI') . ' (' . $parse_time . 's)' . "\n", 3, STORE_PAGE_PARSE_TIME_LOG);
 
     if (DISPLAY_PAGE_PARSE_TIME == 'true') {
-      echo '<span class="smallText">Parse Time: ' . $parse_time . 's</span>';
+      echo '<small>Parse Time: ' . $parse_time . 's</small>';
     }
   }
 

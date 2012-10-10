@@ -44,8 +44,8 @@
           $manufacturer_info_string .= '<tr><td valign="top">-&nbsp;</td><td valign="top"><a href="' . tep_href_link(FILENAME_DEFAULT, 'manufacturers_id=' . $manufacturer['manufacturers_id']) . '">' . MODULE_BOXES_MANUFACTURER_INFO_BOX_OTHER_PRODUCTS . '</a></td></tr>' .
                                        '</table>';
 
-          $data = '<div class="ui-widget infoBoxContainer">' .
-                  '  <div class="ui-widget-header infoBoxHeading">' . MODULE_BOXES_MANUFACTURER_INFO_BOX_TITLE . '</div>' .
+          $data = '<div class="well nav-sidebox">' .
+                  '  <h4>' . MODULE_BOXES_MANUFACTURER_INFO_BOX_TITLE . '</h4>' .
                   '  ' . $manufacturer_info_string .
                   '</div>';
 

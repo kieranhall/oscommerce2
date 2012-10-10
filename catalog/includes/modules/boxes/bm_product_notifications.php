@@ -51,8 +51,8 @@
           $notif_contents = '<table border="0" cellspacing="0" cellpadding="2" class="ui-widget-content infoBoxContents"><tr><td><a href="' . tep_href_link(basename($PHP_SELF), tep_get_all_get_params(array('action')) . 'action=notify', $request_type) . '">' . tep_image(DIR_WS_IMAGES . 'box_products_notifications.gif', IMAGE_BUTTON_NOTIFICATIONS) . '</a></td><td><a href="' . tep_href_link(basename($PHP_SELF), tep_get_all_get_params(array('action')) . 'action=notify', $request_type) . '">' . sprintf(MODULE_BOXES_PRODUCT_NOTIFICATIONS_BOX_NOTIFY, tep_get_products_name($HTTP_GET_VARS['products_id'])) .'</a></td></tr></table>';
         }
 
-        $data = '<div class="ui-widget infoBoxContainer">' .
-                '  <div class="ui-widget-header infoBoxHeading"><a href="' . tep_href_link(FILENAME_ACCOUNT_NOTIFICATIONS, '', 'SSL') . '">' . MODULE_BOXES_PRODUCT_NOTIFICATIONS_BOX_TITLE . '</a></div>' .
+        $data = '<div class="well nav-sidebox">' .
+                '  <h4><a href="' . tep_href_link(FILENAME_ACCOUNT_NOTIFICATIONS, '', 'SSL') . '">' . MODULE_BOXES_PRODUCT_NOTIFICATIONS_BOX_TITLE . '</a></h4>' .
                 '  ' . $notif_contents .
                 '</div>';
 

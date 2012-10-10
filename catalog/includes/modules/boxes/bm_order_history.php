@@ -53,8 +53,8 @@
           }
           $customer_orders_string .= '</table>';
 
-          $data = '<div class="ui-widget infoBoxContainer">' .
-                  '  <div class="ui-widget-header infoBoxHeading">' . MODULE_BOXES_ORDER_HISTORY_BOX_TITLE . '</div>' .
+          $data = '<div class="well nav-sidebox">' .
+                  '  <h4>' . MODULE_BOXES_ORDER_HISTORY_BOX_TITLE . '</h4>' .
                   '  ' . $customer_orders_string .
                   '</div>';
 

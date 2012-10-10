@@ -9,16 +9,19 @@
 
   Released under the GNU General Public License
 */
-
+?>
+<header id="header">
+<?php
   if ($messageStack->size('header') > 0) {
     echo '<div class="grid_24">' . $messageStack->output('header') . '</div>';
   }
 ?>
 
-<div id="header" class="grid_24">
-  <div id="storeLogo"><?php echo '<a href="' . tep_href_link(FILENAME_DEFAULT) . '">' . tep_image(DIR_WS_IMAGES . 'store_logo.png', STORE_NAME) . '</a>'; ?></div>
-
-  <div id="headerShortcuts">
+<!-- <div id="header" class="grid_24"> -->
+  <div class="row-fluid">
+    <div class="span12">
+      <div id="store-logo" class="pull-left"><?php echo '<a href="' . tep_href_link(FILENAME_DEFAULT) . '">' . tep_image(DIR_WS_IMAGES . 'store_logo.png', STORE_NAME) . '</a>'; ?></div>
+      <div id="header-shortcuts" class="btn-group pull-right">
 <?php
   echo tep_draw_button(HEADER_TITLE_CART_CONTENTS . ($cart->count_contents() > 0 ? ' (' . $cart->count_contents() . ')' : ''), 'cart', tep_href_link(FILENAME_SHOPPING_CART)) .
        tep_draw_button(HEADER_TITLE_CHECKOUT, 'triangle-1-e', tep_href_link(FILENAME_CHECKOUT_SHIPPING, '', 'SSL')) .
@@ -28,35 +31,23 @@
     echo tep_draw_button(HEADER_TITLE_LOGOFF, null, tep_href_link(FILENAME_LOGOFF, '', 'SSL'));
   }
 ?>
+      </div>
+    </div>
   </div>
 
-<script type="text/javascript">
-  $("#headerShortcuts").buttonset();
-</script>
-</div>
-
-<div class="grid_24 ui-widget infoBoxContainer">
-  <div class="ui-widget-header infoBoxHeading"><?php echo '&nbsp;&nbsp;' . $breadcrumb->trail(' &raquo; '); ?></div>
-</div>
-
-<?php
-  if (isset($HTTP_GET_VARS['error_message']) && tep_not_null($HTTP_GET_VARS['error_message'])) {
-?>
+<?php if (isset($HTTP_GET_VARS['error_message']) && tep_not_null($HTTP_GET_VARS['error_message'])): ?>
 <table border="0" width="100%" cellspacing="0" cellpadding="2">
   <tr class="headerError">
     <td class="headerError"><?php echo htmlspecialchars(stripslashes(urldecode($HTTP_GET_VARS['error_message']))); ?></td>
   </tr>
 </table>
-<?php
-  }
+<?php endif; ?>
 
-  if (isset($HTTP_GET_VARS['info_message']) && tep_not_null($HTTP_GET_VARS['info_message'])) {
-?>
+<?php if (isset($HTTP_GET_VARS['info_message']) && tep_not_null($HTTP_GET_VARS['info_message'])): ?>
 <table border="0" width="100%" cellspacing="0" cellpadding="2">
   <tr class="headerInfo">
     <td class="headerInfo"><?php echo htmlspecialchars(stripslashes(urldecode($HTTP_GET_VARS['info_message']))); ?></td>
   </tr>
 </table>
-<?php
-  }
-?>
+<?php endif; ?>
+</header>

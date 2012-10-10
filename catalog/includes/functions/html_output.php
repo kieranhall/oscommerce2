@@ -358,16 +358,16 @@
       $priority = 'secondary';
     }
 
-    $button = '<span class="tdbLink">';
+    $button = '';
 
     if ( ($params['type'] == 'button') && isset($link) ) {
-      $button .= '<a id="tdb' . $button_counter . '" href="' . $link . '"';
+      $button .= '<a class="btn" id="tdb' . $button_counter . '" href="' . $link . '"';
 
       if ( isset($params['newwindow']) ) {
         $button .= ' target="_blank"';
       }
     } else {
-      $button .= '<button id="tdb' . $button_counter . '" type="' . tep_output_string($params['type']) . '"';
+      $button .= '<button class="btn" id="tdb' . $button_counter . '" type="' . tep_output_string($params['type']) . '"';
     }
 
     if ( isset($params['params']) ) {
@@ -382,7 +382,7 @@
       $button .= '</button>';
     }
 
-    $button .= '</span><script type="text/javascript">$("#tdb' . $button_counter . '").button(';
+    //$button .= '</span><script type="text/javascript">$("#tdb' . $button_counter . '").button(';
 
     $args = array();
 
@@ -403,10 +403,10 @@
     }
 
     if (!empty($args)) {
-      $button .= '{' . implode(',', $args) . '}';
+      //$button .= '{' . implode(',', $args) . '}';
     }
 
-    $button .= ').addClass("ui-priority-' . $priority . '").parent().removeClass("tdbLink");</script>';
+    //$button .= ').addClass("ui-priority-' . $priority . '").parent().removeClass("tdbLink");</script>';
 
     $button_counter++;
 

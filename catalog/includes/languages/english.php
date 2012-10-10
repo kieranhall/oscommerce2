@@ -219,8 +219,8 @@ define('ICON_SUCCESS', 'Success');
 define('ICON_WARNING', 'Warning');
 
 define('TEXT_GREETING_PERSONAL', 'Welcome back <span class="greetUser">%s!</span> Would you like to see which <a href="%s"><u>new products</u></a> are available to purchase?');
-define('TEXT_GREETING_PERSONAL_RELOGON', '<small>If you are not %s, please <a href="%s"><u>log yourself in</u></a> with your account information.</small>');
-define('TEXT_GREETING_GUEST', 'Welcome <span class="greetUser">Guest!</span> Would you like to <a href="%s"><u>log yourself in</u></a>? Or would you prefer to <a href="%s"><u>create an account</u></a>?');
+define('TEXT_GREETING_PERSONAL_RELOGON', '<small>If you are not %s, please <a href="%s">log yourself in</a> with your account information.</small>');
+define('TEXT_GREETING_GUEST', 'Welcome <span class="greetUser">Guest!</span> Would you like to <a href="%s">log yourself in</a>? Or would you prefer to <a href="%s">create an account</a>?');
 
 define('TEXT_SORT_PRODUCTS', 'Sort products ');
 define('TEXT_DESCENDINGLY', 'descendingly');
@@ -239,7 +239,7 @@ define('TEXT_UNKNOWN_TAX_RATE', 'Unknown tax rate');
 
 define('TEXT_REQUIRED', '<span class="errorText">Required</span>');
 
-define('ERROR_TEP_MAIL', '<font face="Verdana, Arial" size="2" color="#ff0000"><strong><small>TEP ERROR:</small> Cannot send the email through the specified SMTP server. Please check your php.ini setting and correct the SMTP server if necessary.</strong></font>');
+define('ERROR_TEP_MAIL', '<strong><small>TEP ERROR:</small> Cannot send the email through the specified SMTP server. Please check your php.ini setting and correct the SMTP server if necessary.</strong>');
 
 define('TEXT_CCVAL_ERROR_INVALID_DATE', 'The expiry date entered for the credit card is invalid. Please check the date and try again.');
 define('TEXT_CCVAL_ERROR_INVALID_NUMBER', 'The credit card number entered is invalid. Please check the number and try again.');

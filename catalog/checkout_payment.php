@@ -143,12 +143,9 @@ function rowOutEffect(object) {
   <h2><?php echo TABLE_HEADING_BILLING_ADDRESS; ?></h2>
 
   <div class="contentText">
-    <div class="ui-widget infoBoxContainer" style="float: right;">
-      <div class="ui-widget-header infoBoxHeading"><?php echo TITLE_BILLING_ADDRESS; ?></div>
-
-      <div class="ui-widget-content infoBoxContents">
-        <?php echo tep_address_label($customer_id, $billto, true, ' ', '<br />'); ?>
-      </div>
+    <div class="well nav-sidebox" style="float: right;">
+      <h4><?php echo TITLE_BILLING_ADDRESS; ?></h4>
+      <?php echo tep_address_label($customer_id, $billto, true, ' ', '<br />'); ?>
     </div>
 
     <?php echo TEXT_SELECTED_BILLING_DESTINATION; ?><br /><br /><?php echo tep_draw_button(IMAGE_BUTTON_CHANGE_ADDRESS, 'home', tep_href_link(FILENAME_CHECKOUT_PAYMENT_ADDRESS, '', 'SSL')); ?>

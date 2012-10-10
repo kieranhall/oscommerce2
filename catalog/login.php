@@ -92,22 +92,17 @@
     echo $messageStack->output('login');
   }
 ?>
-
-<div class="contentContainer" style="width: 45%; float: left;">
+<div class="row-fluid">
+<div class="span6">
   <h2><?php echo HEADING_NEW_CUSTOMER; ?></h2>
-
-  <div class="contentText">
     <p><?php echo TEXT_NEW_CUSTOMER; ?></p>
     <p><?php echo TEXT_NEW_CUSTOMER_INTRODUCTION; ?></p>
-
     <p align="right"><?php echo tep_draw_button(IMAGE_BUTTON_CONTINUE, 'triangle-1-e', tep_href_link(FILENAME_CREATE_ACCOUNT, '', 'SSL')); ?></p>
-  </div>
 </div>
 
-<div class="contentContainer" style="width: 45%; float: left; border-left: 1px dashed #ccc; padding-left: 3%; margin-left: 3%;">
+<div class="span6">
   <h2><?php echo HEADING_RETURNING_CUSTOMER; ?></h2>
-
-  <div class="contentText">
+  
     <p><?php echo TEXT_RETURNING_CUSTOMER; ?></p>
 
     <?php echo tep_draw_form('login', tep_href_link(FILENAME_LOGIN, 'action=process', 'SSL'), 'post', '', true); ?>
@@ -128,7 +123,7 @@
     <p align="right"><?php echo tep_draw_button(IMAGE_BUTTON_LOGIN, 'key', null, 'primary'); ?></p>
 
     </form>
-  </div>
+</div>
 </div>
 
 <?php

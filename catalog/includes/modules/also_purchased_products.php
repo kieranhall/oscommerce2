@@ -43,11 +43,8 @@
 
   <br />
 
-  <div class="ui-widget infoBoxContainer">
-    <div class="ui-widget-header ui-corner-top infoBoxHeading">
-      <span><?php echo TEXT_ALSO_PURCHASED_PRODUCTS; ?></span>
-    </div>
-
+  <div class="well nav-sidebox">
+    <?php echo TEXT_ALSO_PURCHASED_PRODUCTS; ?>
     <?php echo $also_pur_prods_content; ?>
   </div>
 

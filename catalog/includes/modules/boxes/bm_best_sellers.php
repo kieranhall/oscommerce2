@@ -47,9 +47,9 @@
           }
           $bestsellers_list .= '</ol>';
 
-          $data = '<div class="ui-widget infoBoxContainer">' .
-                  '  <div class="ui-widget-header infoBoxHeading">' . MODULE_BOXES_BEST_SELLERS_BOX_TITLE . '</div>' .
-                  '  <div class="ui-widget-content infoBoxContents">' . $bestsellers_list . '</div>' .
+          $data = '<div class="well well nav-sidebox">' .
+                  '  <h4>' . MODULE_BOXES_BEST_SELLERS_BOX_TITLE . '</h4>' .
+                  $bestsellers_list .
                   '</div>';
 
           $oscTemplate->addBlock($data, $this->group);
